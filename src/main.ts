@@ -6,3 +6,4 @@ async function bootstrap() {
   await app.listen(3000);
 }
 bootstrap();
+// TODO: install rate-limiting on requests

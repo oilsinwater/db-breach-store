@@ -8,7 +8,8 @@ export class ApiKeyStrategy extends PassportStrategy(Strategy, 'api-key') {
 
   constructor() {
     super();
-    this.validApiKeys = process.env.VALID_API_KEYS.split(',');
+    const keys = process.env.VALID_API_KEYS;
+    this.validApiKeys = keys ? keys.split(',') : [];
   }
 
   async validate(apiKey: string): Promise<any> {
